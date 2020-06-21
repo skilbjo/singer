@@ -1,0 +1,5 @@
+config/
+!config/exchangeratesapi
+!config/target-csv
+properties/
+data/

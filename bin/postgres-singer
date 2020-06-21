@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" && cd "$dir"
+project_root="$(cd ${dir}; cd ..; pwd)"
+cd "$project_root"
+
+# generate properties file, where you can set up stream / sync tables (later on)
+#tap-postgres -c config/postgres --discover
+
+#tap-postgres -c config/postgres --properties properties/properties-equities.json | \
+  #target-csv -c config/target-csv
+
+#tap-postgres -c config/postgres --properties properties/properties-portfolio.json | \
+  #target-csv -c config/target-csv
+
+tap-postgres -c config/postgres --properties properties/properties-equities.json

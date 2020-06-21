@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" && cd "$dir"
+project_root="$(cd ${dir}; cd ..; pwd)"
+cd "$project_root"
+
+tap-exchangeratesapi -c config/exchangeratesapi | \
+  target-csv -c config/target-csv
